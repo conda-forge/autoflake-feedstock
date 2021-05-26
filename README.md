@@ -115,5 +115,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@asford](https://github.com/asford/)
 * [@pmgrafe](https://github.com/pmgrafe/)
 
