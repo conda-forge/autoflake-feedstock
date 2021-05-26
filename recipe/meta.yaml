@@ -10,7 +10,7 @@ source:
   sha256: 6b59e5b9b82e30077499578856282debb81186d10b4f899e8c2e1d616cdef973
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - autoflake = autoflake:main
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=2.7
   run:
     - pyflakes >=1.1.0
-    - python
+    - python >=2.7
 
 test:
   commands:
@@ -38,3 +38,4 @@ about:
 extra:
   recipe-maintainers:
     - pmgrafe
+    - asford
