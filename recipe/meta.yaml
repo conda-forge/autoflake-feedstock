@@ -1,5 +1,5 @@
 {% set name = "autoflake" %}
-{% set version = "1.7.5" %}
+{% set version = "1.7.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9848061faca11745e6ca9feb010a8caa9d62ec3ea1817413c226eb3b58bbdada
+  sha256: c8e4fc41aa3eae0f5c94b939e3a3d50923d7a9306786a6cbf4866a077b8f6832
 
 build:
   number: 0
