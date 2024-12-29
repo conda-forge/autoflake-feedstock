@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9848061faca11745e6ca9feb010a8caa9d62ec3ea1817413c226eb3b58bbdada
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - autoflake = autoflake:main
@@ -19,12 +19,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python {{ python_min }}
   run:
     - pyflakes >=1.1.0
-    - python >=2.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - autoflake --help
 
