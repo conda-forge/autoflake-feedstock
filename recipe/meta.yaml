@@ -24,7 +24,7 @@ requirements:
   run:
     - pyflakes >=3.0.0
     - python >={{ python_min }}
-    - tomli >=2.0.1  # [py<311]
+    - tomli >=2.0.1 # remove when python <=3.10 is no longer supported
 
 test:
   requires:
