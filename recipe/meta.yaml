@@ -20,13 +20,17 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
   run:
-    - pyflakes >=1.1.0
+    - pyflakes >=3.0.0
     - python >={{ python_min }}
+    - tomli >=2.0.1  # [py<311]
 
 test:
   requires:
     - python {{ python_min }}
+  imports:
+    - autoflake
   commands:
     - autoflake --help
 
