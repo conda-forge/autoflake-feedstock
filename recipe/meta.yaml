@@ -1,5 +1,5 @@
 {% set name = "autoflake" %}
-{% set version = "1.7.5" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9848061faca11745e6ca9feb010a8caa9d62ec3ea1817413c226eb3b58bbdada
+  sha256: c98b75dc5b0a86459c4f01a1d32ac7eb4338ec4317a4469515ff1e687ecd909e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - autoflake = autoflake:main
@@ -20,13 +20,17 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
   run:
-    - pyflakes >=1.1.0
+    - pyflakes >=3.0.0
     - python >={{ python_min }}
+    - tomli >=2.0.1 # remove when python <=3.10 is no longer supported
 
 test:
   requires:
     - python {{ python_min }}
+  imports:
+    - autoflake
   commands:
     - autoflake --help
 
